@@ -2,30 +2,62 @@
 
 # Overview
 
-In this project, we aim to group different cryptocurrencies based on their performance metrics. We employ K-Means clustering to identify meaningful patterns and groupings in the data. Additionally, we use Principal Component Analysis (PCA) to reduce the dimensionality of the data, which helps in visualizing and interpreting the clusters more effectively.
+This project demonstrates how to normalize cryptocurrency market data using the StandardScaler module from scikit-learn. The script scales numerical data while preserving the cryptocurrency names (coin IDs) as the index for better readability and further analysis.
 
-# Instructions
+# Prerequisites
 
-The instructions for this project are divided into the following sections:
+Ensure you have the following dependencies installed before running the script:
 
-1. Data Preparation
+pip install pandas scikit-learn
 
-2. Applying PCA
+# Steps Implemented
 
-3. K-Means Clustering
+1. Load and Prepare Data
 
-4. Visualizing the Results
+- The script assumes the market data is stored in a DataFrame named df_market_data.
 
-# 1. Data Preparation
+- The coin_id column (if present) is separated to retain cryptocurrency names.
 
-1. Read the Data:
-- Load the cryptocurrency data into a Pandas DataFrame.
-![image](https://github.com/user-attachments/assets/7b1bc83b-73a4-46ab-8727-3640a2b2e0e7)
+2. Normalize Data Using StandardScaler
+
+- The script applies StandardScaler to scale numerical features.
+
+- Non-numeric columns such as coin_id are excluded from scaling.
+
+3. Create a Scaled DataFrame
+
+- A new DataFrame is created with the scaled data.
+
+The original column names are retained.
+
+4. Set the Coin ID as Index
+
+- The coin_id column is restored as the index for reference.
+
+5. Display the Scaled DataFrame
+
+- The first few rows of the scaled DataFrame are printed to verify the transformation.
+
+Code Implementation
+
+![image](https://github.com/user-attachments/assets/24679207-402d-4180-bb6d-f55a9d151c11)
 
 
-2. Scale the data
-- Scale the data to ensure all features contribute equally to the clustering process.
-![image](https://github.com/user-attachments/assets/ac9ec919-4e12-484e-b459-e74629780cbf)
+# Usage
 
+- Load your cryptocurrency market data into df_market_data.
 
+- Run the script to normalize the numerical data.
+
+- Use the resulting DataFrame for further analysis or visualization.
+
+# Notes
+
+- The script ignores non-numeric columns to prevent errors during scaling.
+
+- Ensure your dataset includes numeric features for meaningful normalization.
+
+# License
+
+This project is open-source and free to use under the MIT License.
 
